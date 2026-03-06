@@ -18,7 +18,7 @@ jobs:
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
     - name: Build da imagem Docker
-      run: docker build -t ghcr.io/ricardomms10/devops-bible-verse-app/bible-app:latest .
+      run: docker build -t ghcr.io/Ricardomms10/devops-bible-verse-app/bible-app:latest .
 
     - name: Push da imagem
-      run: docker push ghcr.io/ricardomms10/devops-bible-verse-app/bible-app:latest
+      run: ghcr.io/Ricardomms10/devops-bible-verse-app/bible-app:latest
