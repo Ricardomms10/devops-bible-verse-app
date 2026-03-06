@@ -25,4 +25,4 @@ jobs:
       run: docker build -t ghcr.io/ricardomms10/devops-bible-verse-app/bible-app:latest .
 
     - name: Push da imagem
-      run: docker push ghcr.io/${{ github.repository }}/bible-app:latest
+      run: docker push ghcr.io/ricardomms10/devops-bible-verse-app/bible-app:latest
