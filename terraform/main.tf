@@ -1,5 +1,5 @@
 resource "aws_security_group" "app_sg" {
-  name = "devops-app-sg"
+  name = "devops-app-sg-v2"
 
   ingress {
     from_port   = 3000
