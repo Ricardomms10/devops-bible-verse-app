@@ -3,8 +3,8 @@
 # Security Group
 # ======================================
 resource "aws_security_group" "app_sg" {
-  name        = "devops-app-sg-${terraform.workspace}"  # nome único por workspace
-  description = "Security group para a aplicação DevOps"
+  name        = "devops-app-sg-${terraform.workspace}"  
+  description = "Security group for DevOps app" 
   vpc_id      = "vpc-09ea7447eb8a4ffe6"  # sua VPC
 
   ingress {
