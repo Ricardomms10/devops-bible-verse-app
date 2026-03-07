@@ -1,5 +1,4 @@
 
-# ======================================
 # Security Group
 # ======================================
 resource "aws_security_group" "app_sg" {
@@ -39,8 +38,10 @@ resource "aws_security_group" "app_sg" {
 # Instância EC2
 # ======================================
 resource "aws_instance" "devops_server" {
-  ami           = "ami-053b0d53c279acc90"  # Ubuntu / região
+  ami           = "ami-053b0d53c279acc90"
   instance_type = "t3.micro"
+
+  key_name = "test"
 
   vpc_security_group_ids = [aws_security_group.app_sg.id]
 
