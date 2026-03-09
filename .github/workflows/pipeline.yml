@@ -42,7 +42,7 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          docker pull ghcr.io/ricardomms10/devops-bible-verse-app/bible-app:latest
-          docker stop bible-app || true
-          docker rm bible-app || true
-          docker run -d -p 3000:3000 --name bible-app ghcr.io/ricardomms10/devops-bible-verse-app/bible-app:latest
+         docker pull ghcr.io/ricardomms10/devops-bible-verse-app/bible-app:latest
+         docker stop $(docker ps -q) || true
+         docker rm $(docker ps -aq) || true
+         docker run -d -p 3000:3000 --name bible-app ghcr.io/ricardomms10/devops-bible-verse-app/bible-app:latest
