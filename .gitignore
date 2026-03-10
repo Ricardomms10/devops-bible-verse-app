@@ -1,1 +1,4 @@
 *.pem
+*.tfvars
+*.tfvars.json
+.env

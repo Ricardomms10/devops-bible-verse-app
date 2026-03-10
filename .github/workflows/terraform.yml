@@ -16,6 +16,10 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_vpc_id: ${{ secrets.OP_VPC_ID }}
+      TF_VAR_ami_id: ${{ secrets.OP_AMI_ID }}
+      TF_VAR_key_name: ${{ secrets.OP_KEY_NAME }}
 
     defaults:
       run:

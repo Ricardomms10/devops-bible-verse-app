@@ -4,7 +4,7 @@
 resource "aws_security_group" "app_sg" {
   name_prefix = "devops-app-sg-"
   description = "Security group for DevOps app" 
-  vpc_id      = "vpc-09ea7447eb8a4ffe6"  # sua VPC
+  vpc_id      = var.vpc_id 
 
   ingress {
     description = "SSH"
@@ -38,10 +38,10 @@ resource "aws_security_group" "app_sg" {
 # Instância EC2
 # ======================================
 resource "aws_instance" "devops_server" {
-  ami           = "ami-053b0d53c279acc90"
-  instance_type = "t3.micro"
+  ami           = var.ami_id
+  instance_type = var.instance_type
 
-  key_name = "test"
+  key_name = var.key_name
 
   vpc_security_group_ids = [aws_security_group.app_sg.id]
 
